@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0a0f1d;
+}
+
+body {
+  min-height: 10px;
+}
+
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px 16px 24px;
+  border-bottom: 1px solid #d9d9d9;
+  min-height: 80px;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.brand {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1;
+  padding-left: 8px;
+  border: 1px solid transparent;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  border-left: 1px solid #d9d9d9;
+  padding-left: 22px;
+}
+
+.main-nav a {
+  font-size: 16px;
+  color: #111827;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+}
+
+.caret {
+  font-size: 0.7rem;
+  transform: translateY(-1px);
+}
+
+.nav-utility {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.guide {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  color: #111827;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-light {
+  min-width: 110px;
+}
+
+.btn-primary {
+  border-color: #0d3bff;
+  min-width: 160px;
+}
+
+.btn span {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.hero {
+  display: flex;
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+  overflow: hidden;
+}
+
+.hero-copy {
+  flex: 1.5;
+  padding: 64px 0 40px 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 1.02rem;
+  line-height: 1.5;
+  margin: 0 0 28px 0;
+  color: #1a1f2c;
+  font-weight: 400;
+}
+
+.eyebrow span {
+  font-weight: 500;
+}
+
+h1 {
+  margin: 0;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+
+.google-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 40px;
+  padding-left: 2px;
+}
+
+.large {
+  min-height: 64px;
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+.google-btn {
+  min-width: 280px;
+  border-color: #d2d2d2;
+  font-weight: 500;
+}
+
+.google-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hero-art {
+  flex: 1;
+  position: relative;
+  min-width: 420px;
+  border-left: 1px solid #e5e5e5;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.shape {
+  position: absolute;
+  border: 1px solid #d8d8d8;
+  background: rgba(255, 255, 255, 0.25);
+}
+/* 
+.shape-a {
+  width: 110%;
+  height: 120%;
+  right: -22%;
+  top: -12%;
+  transform: rotate(22deg);
+}
+
+.shape-b {
+  width: 90%;
+  height: 110%;
+  right: -8%;
+  top: 14%;
+  transform: rotate(22deg);
+}
+
+.shape-c {
+  width: 92%;
+  height: 118%;
+  right: -6%;
+  top: 18%;
+  transform: rotate(18deg);
+}
+
+.shape-d {
+  width: 72%;
+  height: 95%;
+  right: 18%;
+  top: 24%;
+  transform: rotate(22deg);
+} */
+
+@media (max-width: 1100px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brand-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-copy {
+    padding: 48px 32px 20px;
+  }
+
+  .hero-art {
+    min-height: 260px;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #e5e5e5;
+  }
+}
+
+@media (max-width: 720px) {
+  .main-nav {
+    display: none;
+  }
+
+  .nav-utility {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .google-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn,
+  .large,
+  .google-btn {
+    width: 100%;
+  }
+
+  .hero-copy {
+    padding: 32px 18px 18px;
+  }
+}
