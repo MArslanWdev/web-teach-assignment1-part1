@@ -5,20 +5,28 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #0a0f1d;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: #f5f5f3;
+  color: #0d1320;
 }
 
 body {
-  min-height: 10px;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, a {
+  font: inherit;
 }
 
 .page-shell {
   width: 100%;
   min-height: 100vh;
-  border: 1px solid #d8d8d8;
-  background: #fff;
+  background: #f5f5f3;
   overflow: hidden;
 }
 
@@ -29,6 +37,7 @@ body {
   padding: 18px 28px 16px 24px;
   border-bottom: 1px solid #d9d9d9;
   min-height: 80px;
+  background: rgba(255, 255, 255, 0.64);
 }
 
 .brand-wrap {
@@ -40,10 +49,10 @@ body {
 .brand {
   font-size: 34px;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: -0.04em;
   line-height: 1;
   padding-left: 8px;
-  border: 1px solid transparent;
+  color: #0d1320;
 }
 
 .main-nav {
@@ -61,7 +70,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid transparent;
 }
 
 .caret {
@@ -83,6 +91,7 @@ body {
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .icon {
@@ -103,6 +112,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
 }
 
 .btn-light {
@@ -124,6 +134,7 @@ body {
   position: relative;
   border-top: 1px solid #e5e5e5;
   overflow: hidden;
+  background: #f5f5f3;
 }
 
 .hero-copy {
@@ -153,6 +164,9 @@ h1 {
   color: #0f172a;
 }
 
+h1 strong {
+  display: block;
+}
 
 .google-container {
   display: flex;
@@ -199,38 +213,234 @@ h1 {
   border: 1px solid #d8d8d8;
   background: rgba(255, 255, 255, 0.25);
 }
-/* 
-.shape-a {
-  width: 110%;
-  height: 120%;
-  right: -22%;
-  top: -12%;
-  transform: rotate(22deg);
+
+.brand-showcase {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 18px 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
 }
 
-.shape-b {
-  width: 90%;
-  height: 110%;
-  right: -8%;
-  top: 14%;
-  transform: rotate(22deg);
+.brand-showcase::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  right: -12%;
+  width: 32%;
+  height: 170%;
+  background: linear-gradient(140deg, rgba(248, 179, 144, 0.5), rgba(252, 216, 161, 0.28), rgba(255, 255, 255, 0.18));
+  transform: skewX(-22deg);
 }
 
-.shape-c {
-  width: 92%;
-  height: 118%;
-  right: -6%;
-  top: 18%;
-  transform: rotate(18deg);
+.brand-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  align-items: center;
+  gap: 18px;
+  min-height: 88px;
+  padding: 0 10px;
 }
 
-.shape-d {
-  width: 72%;
-  height: 95%;
-  right: 18%;
-  top: 24%;
-  transform: rotate(22deg);
-} */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  font-weight: 600;
+  color: #0e1523;
+}
+
+.google-logo {
+  font-size: clamp(1.8rem, 2vw, 2.3rem);
+  letter-spacing: -0.08em;
+  font-weight: 700;
+  justify-self: start;
+}
+
+.google-letter {
+  display: inline-block;
+}
+
+.g-blue { color: #4285f4; }
+.g-red { color: #ea4335; }
+.g-yellow { color: #fbbc05; }
+.g-green { color: #34a853; }
+
+.shopify-logo {
+  justify-content: center;
+  gap: 10px;
+}
+
+.shopify-mark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #95bf47 0%, #7cc9a9 35%, #5d5fef 100%);
+  transform: rotate(45deg);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.shopify-mark::before,
+.shopify-mark::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.shopify-mark::before {
+  width: 8px;
+  height: 13px;
+  left: 6px;
+  top: 3px;
+  border-radius: 8px 8px 0 0;
+  transform: rotate(90deg);
+}
+
+.shopify-mark::after {
+  width: 10px;
+  height: 8px;
+  left: 5px;
+  top: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.shopify-word {
+  font-size: clamp(1.6rem, 1.9vw, 2.1rem);
+  font-weight: 650;
+  letter-spacing: -0.08em;
+}
+
+.mindbody-logo {
+  justify-self: center;
+}
+
+.mindbody-word {
+  font-size: clamp(1.5rem, 1.8vw, 2rem);
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.metlife-logo {
+  gap: 10px;
+}
+
+.metlife-icon {
+  display: inline-block;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a2d53, #0d376d);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.metlife-icon::before,
+.metlife-icon::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  inset: 0;
+}
+
+.metlife-icon::before {
+  width: 10px;
+  height: 10px;
+  left: 9px;
+  top: 7px;
+  box-shadow: 8px 0 0 0 #fff;
+}
+
+.metlife-word {
+  font-size: clamp(1.35rem, 1.8vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+}
+
+.ramp-logo {
+  gap: 8px;
+  justify-content: center;
+}
+
+.ramp-word {
+  font-size: clamp(1.8rem, 2vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+}
+
+.ramp-arrow {
+  font-size: 1.8rem;
+  color: #0e1523;
+  transform: translateY(-2px);
+}
+
+.marriott-logo {
+  gap: 10px;
+  justify-content: center;
+}
+
+.marriott-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #d53040, #7d1d2d);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.marriott-word {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.figma-logo {
+  justify-self: end;
+}
+
+.figma-word {
+  font-size: clamp(1.6rem, 1.9vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.business-model {
+  padding: 30px 26px 46px;
+}
+
+.business-model__content {
+  border: 1px solid #d8d8d8;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 22px 18px 20px;
+}
+
+.business-model__content h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: #1b2333;
+  max-width: 1500px;
+}
+
+.business-model__content h2 span {
+  color: #0f172a;
+  font-weight: 600;
+}
 
 @media (max-width: 1100px) {
   .topbar {
@@ -257,6 +467,17 @@ h1 {
     border-left: none;
     border-top: 1px solid #e5e5e5;
   }
+
+  .brand-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 16px;
+    padding: 12px 0;
+  }
+
+  .google-logo,
+  .figma-logo {
+    justify-self: center;
+  }
 }
 
 @media (max-width: 720px) {
@@ -282,5 +503,588 @@ h1 {
 
   .hero-copy {
     padding: 32px 18px 18px;
+  }
+
+  .brand-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-showcase {
+    padding-inline: 12px;
+  }
+
+  .business-model {
+    padding: 20px 12px 32px;
+  }
+
+  .business-model__content {
+    padding: 18px 14px 16px;
+  }
+}
+
+.payments-overview {
+  background: linear-gradient(135deg, rgba(245, 245, 243, 1) 0%, rgba(242, 232, 236, 0.9) 35%, rgba(255, 241, 227, 0.95) 100%);
+  padding: 28px 28px 60px;
+}
+
+.payments-overview__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.payments-overview__header h3 {
+  margin: 0;
+  font-size: clamp(2.2rem, 2.6vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: #1d2433;
+  max-width: 820px;
+}
+
+.payments-overview__badge {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(22, 31, 49, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #1d2433;
+}
+
+.payments-overview__layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1.7fr 1.1fr;
+  gap: 28px;
+  align-items: end;
+}
+
+.payment-device {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 620px;
+}
+
+.nav-caret,
+.guide-icon,
+.btn-arrow,
+.google-mark,
+.brand-svg,
+.contactless-icon,
+.mini-action-icon,
+.summary-icon,
+.row-icon,
+.plan-card__icon,
+.billing-panel__mini {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.nav-caret {
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+}
+
+.guide-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-arrow {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1);
+}
+
+.google-mark {
+  width: 20px;
+  height: 20px;
+}
+
+.brand-svg {
+  width: 44px;
+  height: 44px;
+}
+
+.google-svg {
+  width: 52px;
+  height: 52px;
+}
+
+.shopify-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.ramp-svg,
+.marriott-svg,
+.figma-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.contactless-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) saturate(0) invert(0.22);
+}
+
+.mini-action-icon {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1);
+}
+
+.summary-icon,
+.row-icon,
+.plan-card__icon,
+.billing-panel__mini {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.device-shell {
+  width: 320px;
+  min-height: 560px;
+  border-radius: 28px 28px 24px 24px;
+  background: linear-gradient(180deg, #171c28 0%, #0d1119 30%, #090d14 100%);
+  position: relative;
+  padding: 18px 16px 8px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16);
+}
+
+.device-shell::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  width: 84%;
+  height: 20px;
+  background: rgba(16, 20, 30, 0.55);
+  border-radius: 30px;
+  filter: blur(10px);
+}
+
+.device-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding-left: 14px;
+}
+
+.device-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.device-dot--dark {
+  background: #111827;
+}
+
+.device-dot--light {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.device-payment-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px 24px 18px 18px;
+  padding: 18px 18px 14px;
+  height: calc(100% - 36px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.device-card__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.device-card__amount-label {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1f2d3d;
+  margin: 8px 0 10px;
+  text-align: center;
+}
+
+.device-card__amount {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  text-align: center;
+  color: #0f172a;
+}
+
+.device-card__list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.device-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  font-size: 0.96rem;
+  color: #1e2a39;
+}
+
+.total-row {
+  padding-top: 12px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.device-card__button {
+  margin-top: auto;
+  border: none;
+  background: #dfe3e7;
+  color: #1d2433;
+  border-radius: 12px;
+  min-height: 42px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-panel {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 18px;
+  min-height: 600px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-panel__topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: #4a5365;
+  margin-bottom: 16px;
+}
+
+.checkout-panel__signal {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4c8b4, #f7b77d);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+.checkout-panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 16px 18px 18px;
+  flex: 1;
+}
+
+.checkout-panel__section h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: #111827;
+}
+
+.checkout-panel__row {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #1f2937;
+}
+
+.checkout-panel__row label {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-right: auto;
+}
+
+.checkout-panel__row span {
+  font-size: 0.8rem;
+  color: #0f172a;
+}
+
+.checkout-panel__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkout-btn {
+  border: none;
+  border-radius: 12px;
+  min-height: 44px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-btn--primary {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: white;
+}
+
+.checkout-btn--secondary {
+  background: #111827;
+  color: white;
+}
+
+.summary-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.summary-info div {
+  flex: 1;
+}
+
+.summary-info label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.summary-info p {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #374151;
+}
+
+.checkout-panel__row--list {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.checkout-panel__button {
+  margin-top: auto;
+  border: none;
+  border-radius: 12px;
+  min-height: 42px;
+  background: #dfe3e7;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.billing-panel {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 18px;
+  padding: 14px 14px 16px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.billing-panel__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.billing-panel__mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.plan-card,
+.history-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  padding: 18px 16px;
+}
+
+.plan-card__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.plan-card__meta {
+  margin-top: 8px;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.plan-card__price-label {
+  margin-top: 20px;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.plan-card__price {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.usage-meter {
+  margin-top: 32px;
+}
+
+.usage-meter__label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.usage-meter__bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(64, 69, 255, 0.2),
+    rgba(255, 99, 153, 0.18)
+  );
+  overflow: hidden;
+}
+
+.usage-meter__bar span {
+  display: block;
+  width: 72%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #7c6ef4,
+    #d66df0,
+    #f7a26e
+  );
+}
+.history-card__label {
+  font-size: 0.78rem;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.history-card__amount {
+  font-size: clamp(1.1rem, 1.4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.history-card__chart {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.history-card__chart span {
+  display: inline-block;
+  width: 8px;
+  background: linear-gradient(180deg, #7a6cff 0%, #d77ef5 100%);
+  border-radius: 4px 4px 0 0;
+}
+
+.chat-button {
+  margin-top: auto;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  min-height: 46px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .payments-overview__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-device,
+  .checkout-panel,
+  .billing-panel {
+    min-height: auto;
+  }
+
+  .checkout-panel,
+  .billing-panel {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .payments-overview {
+    padding: 20px 14px 36px;
+  }
+
+  .payments-overview__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payments-overview__header h3 {
+    max-width: 100%;
+  }
+
+  .device-shell {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .checkout-panel__actions {
+    grid-template-columns: 1fr;
   }
 }
