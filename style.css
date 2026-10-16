@@ -442,6 +442,244 @@ h1 strong {
   font-weight: 600;
 }
 
+.embed-payments {
+  padding: 52px 28px 30px;
+  background: #f5f5f3;
+}
+
+.embed-payments__heading {
+  max-width: 420px;
+  margin: 0 0 18px 18px;
+  font-size: clamp(2.6rem, 3.15vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.075em;
+  color: #1b2433;
+  font-weight: 600;
+}
+
+.embed-payments__content {
+  display: grid;
+  grid-template-columns: 1.02fr 1.6fr;
+  gap: 38px;
+  align-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.receipt-panel {
+  position: relative;
+  min-height: 625px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 28px;
+}
+
+.receipt-panel__decor {
+  position: absolute;
+  inset: 34px 18px 8px 0;
+  border-radius: 30px 0 0 30px;
+  background: linear-gradient(135deg, rgba(252, 246, 247, 1), rgba(255, 255, 255, 0.2));
+  overflow: hidden;
+}
+
+.receipt-panel__decor::before,
+.receipt-panel__decor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(224, 156, 176, 0.18) 0,
+    rgba(224, 156, 176, 0.18) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+.receipt-panel__decor::after {
+  inset: auto 0 0 0;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(254, 247, 249, 0.2) 100%);
+}
+
+.receipt-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 520px);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 22px 44px rgba(17, 24, 39, 0.08);
+  padding: 24px 20px 22px;
+}
+
+.receipt-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.receipt-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5d5ce7, #7a8af9);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.receipt-card h3 {
+  margin: 0;
+  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: #1d2433;
+  font-weight: 600;
+}
+
+.receipt-card__body {
+  padding: 8px 0 18px;
+  border-bottom: 1px solid rgba(21, 31, 42, 0.12);
+}
+
+.receipt-card__thanks {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a2232;
+  margin-bottom: 8px;
+}
+
+.receipt-card__body p {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.6;
+  color: #465267;
+}
+
+.receipt-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0 10px;
+  border-bottom: 1px solid rgba(21, 31, 42, 0.12);
+  font-size: 1.1rem;
+  color: #39475a;
+}
+
+.receipt-card__row strong {
+  color: #1d2433;
+  font-weight: 600;
+}
+
+.receipt-card__row--total {
+  padding-top: 14px;
+  padding-bottom: 8px;
+  border-bottom: none;
+}
+
+.visa-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  height: 22px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #1a58d6, #1e6af2);
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0 8px;
+}
+
+.accounts-panel {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 18px;
+  padding: 16px 14px 10px;
+  min-height: 420px;
+}
+
+.accounts-panel h3 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 2.3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  color: #1a2232;
+  font-weight: 600;
+}
+
+.accounts-table {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+}
+
+.accounts-table__header,
+.accounts-table__row {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1.08fr 1.08fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 14px;
+}
+
+.accounts-table__header {
+  font-size: 0.8rem;
+  text-transform: none;
+  color: #5a6678;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.accounts-table__row {
+  font-size: 1rem;
+  color: #1f2a39;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.accounts-table__row:last-child {
+  border-bottom: none;
+}
+
+.account-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.badge--pink { background: linear-gradient(135deg, #f291c8, #d859b8); }
+.badge--purple { background: linear-gradient(135deg, #7f79ff, #5f63da); }
+.badge--red { background: linear-gradient(135deg, #f17c5d, #d84c43); }
+.badge--orange { background: linear-gradient(135deg, #ffbf5f, #f79b32); }
+.badge--rose { background: linear-gradient(135deg, #f9a8b8, #d95a86); }
+.badge--cyan { background: linear-gradient(135deg, #30c7e8, #1b95d0); }
+.badge--slate { background: linear-gradient(135deg, #93a4bf, #5a6883); }
+.badge--magenta { background: linear-gradient(135deg, #f58db1, #d75f95); }
+.badge--green { background: linear-gradient(135deg, #6ecf94, #3aa266); }
+.badge--gray { background: linear-gradient(135deg, #8a99a9, #5d6780); }
+
 @media (max-width: 1100px) {
   .topbar {
     flex-wrap: wrap;
@@ -477,6 +715,19 @@ h1 strong {
   .google-logo,
   .figma-logo {
     justify-self: center;
+  }
+
+  .embed-payments__content {
+    grid-template-columns: 1fr;
+  }
+
+  .receipt-panel {
+    padding-left: 0;
+    min-height: 540px;
+  }
+
+  .accounts-panel {
+    min-height: auto;
   }
 }
 
@@ -519,6 +770,26 @@ h1 strong {
 
   .business-model__content {
     padding: 18px 14px 16px;
+  }
+
+  .embed-payments {
+    padding-inline: 16px;
+  }
+
+  .embed-payments__heading {
+    margin-left: 0;
+  }
+
+  .receipt-card {
+    padding: 18px 14px 16px;
+  }
+
+  .accounts-table__header,
+  .accounts-table__row {
+    grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr;
+    font-size: 0.8rem;
+    gap: 8px;
+    padding-inline: 8px;
   }
 }
 
