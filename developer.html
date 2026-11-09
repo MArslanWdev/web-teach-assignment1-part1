@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developers | Paywise</title>
+    <link rel="stylesheet" href="developer.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">paywise</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Products</a>
+        <a href="solution.html">Solutions</a>
+        <a href="developer.html" aria-current="page">Developers</a>
+        <a href="#resources">Resources</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="sign-in" href="login.html">Sign in</a>
+        <a class="button button-small" href="mailto:sales@example.com">Contact sales</a>
+      </div>
+    </header>
+
+    <div class="docs-layout">
+      <aside class="sidebar">
+        <label class="search-label" for="docs-search">Search documentation</label>
+        <input id="docs-search" type="search" placeholder="Find a topic" />
+
+        <nav class="side-nav" aria-label="Documentation navigation">
+          <a class="selected" href="#introduction">Introduction</a>
+          <a href="#authentication">Authentication</a>
+          <a href="#errors">Errors</a>
+          <a href="#requests">Make a request</a>
+          <a href="#resources">Resources</a>
+          <a href="#libraries">Client libraries</a>
+        </nav>
+
+        <p class="sidebar-note">New to Paywise?</p>
+        <a class="side-link" href="#quickstart">Start with the quickstart guide</a>
+      </aside>
+
+      <main class="documentation">
+        <div class="docs-heading">
+          <p class="eyebrow">PAYWISE DOCUMENTATION</p>
+          <h1>Developer guide</h1>
+          <p class="intro">
+            Build payment experiences with simple tools, clear guides, and a
+            reliable API.
+          </p>
+        </div>
+
+        <div class="docs-grid">
+          <article class="article-content">
+            <section id="introduction">
+              <h2>Introduction</h2>
+              <p>
+                The Paywise API helps your application create payments, manage
+                customers, and track transactions. Requests use standard HTTP
+                methods and return data in JSON format.
+              </p>
+              <p>
+                You can try the API in a test environment before accepting
+                real payments. Test requests do not move money.
+              </p>
+            </section>
+
+            <section id="authentication">
+              <h2>Authentication</h2>
+              <p>
+                Each API request must include a secret key. Keep secret keys on
+                your server and never share them in public code or web pages.
+              </p>
+            </section>
+          </article>
+
+          <aside class="getting-started" id="quickstart">
+            <section>
+              <h2>Just getting started?</h2>
+              <p>
+                Follow our <a href="#requests">quickstart guide</a> to make
+                your first test request.
+              </p>
+            </section>
+
+            <section>
+              <h2>Not a developer?</h2>
+              <p>
+                You can also create payment links and manage invoices from your
+                Paywise dashboard without writing code.
+              </p>
+            </section>
+          </aside>
+
+          <section class="error-section" id="errors">
+            <h2>Errors</h2>
+            <div class="error-layout">
+              <div class="error-copy">
+                <p>
+                  Paywise uses HTTP status codes to show whether a request
+                  worked or needs attention. These code ranges are a useful
+                  first guide:
+                </p>
+                <ul>
+                  <li>
+                    <strong>2xx</strong> means the request completed
+                    successfully.
+                  </li>
+                  <li>
+                    <strong>4xx</strong> means the request needs to be checked.
+                    This can happen when information is missing or an account
+                    does not have permission.
+                    <ul>
+                      <li>
+                        Check the error message for details about the problem.
+                      </li>
+                      <li>
+                        See <a href="#error-handling">error handling</a> for
+                        tips on what to do next.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>5xx</strong> means something went wrong while
+                    Paywise was processing the request. Try again later.
+                  </li>
+                </ul>
+                <p id="error-handling" class="helpful">
+                  If a request fails, check its status and message before
+                  trying it again.
+                </p>
+              </div>
+
+              <div class="status-table-wrap">
+                <table class="status-table">
+                  <caption>HTTP status code summary</caption>
+                  <tbody>
+                    <tr>
+                      <th scope="row">200</th>
+                      <td>OK</td>
+                      <td>The request was completed.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">400</th>
+                      <td>Bad Request</td>
+                      <td>Some request information is missing or invalid.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">401</th>
+                      <td>Unauthorized</td>
+                      <td>A valid API key was not provided.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">403</th>
+                      <td>Forbidden</td>
+                      <td>Your account cannot perform this action.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">404</th>
+                      <td>Not Found</td>
+                      <td>The requested item could not be found.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">409</th>
+                      <td>Conflict</td>
+                      <td>The request conflicts with the current item state.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">424</th>
+                      <td>Dependency Failed</td>
+                      <td>A service needed to finish the request is unavailable.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">429</th>
+                      <td>Too Many Requests</td>
+                      <td>Wait briefly before sending more requests.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">500</th>
+                      <td>Server Error</td>
+                      <td>Paywise could not complete the request right now.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <article class="article-content">
+            <section id="requests">
+              <h2>Make a request</h2>
+              <p>Here is a simple example of a request to the Paywise API:</p>
+              <pre><code>GET https://api.paywise.example/v1/payments</code></pre>
+            </section>
+          </article>
+
+          <aside class="getting-started">
+            <section class="base-url">
+              <h3>API BASE URL</h3>
+              <code>https://api.paywise.example</code>
+            </section>
+
+            <section class="library-box" id="libraries">
+              <h2>Client libraries</h2>
+              <p>Choose a language to start building:</p>
+              <ul>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Ruby</li>
+                <li>PHP</li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer" id="resources">
+      <p>Paywise developer resources</p>
+      <a href="#introduction">Back to the top</a>
+    </footer>
+  </body>
+</html>
