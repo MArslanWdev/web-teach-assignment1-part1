@@ -26,28 +26,67 @@
         <h2>Create an account</h2>
         <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
 
-        <form class="auth-form">
+        <form class="auth-form" id="signup-form">
           <div class="name-row">
             <label class="input-wrapper">
-              <input type="text" placeholder="Fletcher" aria-label="First name" />
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Fletcher"
+                aria-label="First name"
+                autocomplete="given-name"
+                required
+              />
             </label>
             <label class="input-wrapper">
-              <input type="text" placeholder="Last name" aria-label="Last name" />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                aria-label="Last name"
+                autocomplete="family-name"
+                required
+              />
             </label>
           </div>
 
           <label class="input-wrapper full-width">
-            <input type="email" placeholder="Email" aria-label="Email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              aria-label="Email"
+              autocomplete="email"
+              required
+            />
           </label>
 
           <label class="input-wrapper password-field full-width">
-            <input type="password" placeholder="Enter your password" aria-label="Password" />
+            <input
+              id="signup-password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              aria-label="Password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              id="toggle-password"
+              aria-label="Show password"
+              aria-pressed="false"
+            >Show</button>
           </label>
 
           <label class="checkbox-row">
-            <input type="checkbox" checked />
+            <input type="checkbox" name="terms" required />
             <span>I agree to the <a href="#">Terms &amp; Conditions</a></span>
           </label>
+
+          <p class="form-message" id="form-message" aria-live="polite"></p>
 
           <button type="submit" class="primary-btn">Create account</button>
 
@@ -66,5 +105,6 @@
         </form>
       </main>
     </div>
+    <script src="signup.js" defer></script>
   </body>
 </html>
