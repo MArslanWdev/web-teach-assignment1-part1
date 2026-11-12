@@ -166,6 +166,29 @@ button {
   outline: none;
 }
 
+.input-shell input[type="password"],
+.input-shell input[type="text"] {
+  min-width: 0;
+}
+
+.toggle-password {
+  flex-shrink: 0;
+  margin-right: 10px;
+  padding: 5px 8px;
+  border: 1px solid #dfe3ea;
+  border-radius: 6px;
+  color: #4b5563;
+  background: #ffffff;
+  font-size: 0.75rem;
+}
+
+.form-message {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .input-shell input::placeholder {
   color: #9aa4b2;
 }

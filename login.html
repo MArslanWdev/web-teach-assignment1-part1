@@ -20,12 +20,19 @@
           <div class="form-wrap">
             <h1>Log in to your account</h1>
             <p>Please enter your details</p>
-            <form class="login-form">
+            <form class="login-form" id="login-form" novalidate>
               <div class="field-group">
                 <label for="email">Email</label>
                 <div class="input-shell">
                   <img src="email-icon.svg" alt="Email" class="input-icon" />
-                  <input id="email" type="email" placeholder="Enter your email" />
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                  />
                 </div>
               </div>
 
@@ -33,7 +40,21 @@
                 <label for="password">Password</label>
                 <div class="input-shell">
                   <span class="input-icon" aria-hidden="true">◌</span>
-                  <input id="password" type="password" placeholder="••••••••" />
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    id="toggle-password"
+                    aria-label="Show password"
+                    aria-pressed="false"
+                  >Show</button>
                 </div>
               </div>
 
@@ -45,6 +66,7 @@
                 <a href="#">Forgot password</a>
               </div>
 
+              <p class="form-message" id="form-message" aria-live="polite"></p>
               <button type="submit" class="login-btn">Log in</button>
 
               <div class="separator"><span>Or</span></div>
@@ -75,5 +97,6 @@
         </aside>
       </section>
     </div>
+    <script src="login.js" defer></script>
   </body>
 </html>
